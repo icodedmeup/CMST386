@@ -1,0 +1,29 @@
+on:
+
+  push:
+
+    branches:
+
+      - main
+
+jobs:
+
+  build-and-deploy:
+
+    runs-on: windows-latest
+
+     steps:
+
+    - uses: actions/checkout@main
+
+    - name: Deploy HTML Files to APPService - CMST386
+
+      uses: azure/webapps-deploy@v1
+
+      with:
+
+      #Change the app-name to match what was provided to you in the publish settings file, this is in a naming convention of 'COURSENAME-STUDENTUID'
+
+        app-name: 'cmst386-mmatthews35'
+
+        slot-name: 'production'
